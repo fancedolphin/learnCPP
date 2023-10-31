@@ -7,31 +7,13 @@
 #include "Room.h"
 
 class State {
-    Room* currentRoom;
-    vector<GameObject> inventory;
-    int strength; // Player's physical strength
-
+    Room *currentRoom;
 public:
-    explicit State(Room* startRoom) : currentRoom(startRoom), strength(100) {}
-
-    void goTo(Room* target) {
-        currentRoom = target;
-    }
-
-    void announceLoc() const {
-        currentRoom->describe();
-    }
-
-    Room* getCurrentRoom() const {
-        return currentRoom;
-    }
-    int getStrength() const {
-        return strength;
-    }
-
-    void setStrength(int value) {
-        strength = value;
-    }
+    explicit State(Room *startRoom);
+    void goTo(Room *target);
+    void announceLoc() const;
+    Room* getCurrentRoom() const;
+};
 
 
 #endif //TEXTADV_STATE_H

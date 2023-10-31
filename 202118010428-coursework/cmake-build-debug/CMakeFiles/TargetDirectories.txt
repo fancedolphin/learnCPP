@@ -1,0 +1,3 @@
+D:/learningc++/202118010428-coursework/cmake-build-debug/CMakeFiles/textadv.dir
+D:/learningc++/202118010428-coursework/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/learningc++/202118010428-coursework/cmake-build-debug/CMakeFiles/rebuild_cache.dir

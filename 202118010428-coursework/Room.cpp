@@ -52,7 +52,23 @@ Room* Room::addRoom(const string* _name, const string *_desc) {
 void Room::addRoom(Room* room) {
     Room::rooms.push_back(room);
 }
-
+Room* (Room::*getDirectionFunction(const string& direction))() const {
+    if (direction == "north") {
+        return &Room::getNorth;
+    }
+    else if (direction == "east") {
+        return &Room::getEast;
+    }
+    else if (direction == "south") {
+        return &Room::getSouth;
+    }
+    else if (direction == "west") {
+        return &Room::getWest;
+    }
+    else {
+        return nullptr;
+    }
+}
 /**
  * Gets the north exit of a room.
  * @return The room that is north of this one, or NULL if there is no exit.
@@ -68,9 +84,8 @@ Room* Room::getNorth() const {
 void Room::setNorth(Room* _north) {
     this->north = _north;
 }
-
 Room* Room::getSouth() const {
-    return this->sorth;
+    return this->south;
 }
 
 /**
